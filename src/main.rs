@@ -10,7 +10,7 @@ fn main() {
 
     if age_int >= 18 {
         println!("your age is {}, enjoi your membership", age_int);
-    }else {
+    } else {
         println!("your age is {}, you cant pass", age_int);
     }
 }
