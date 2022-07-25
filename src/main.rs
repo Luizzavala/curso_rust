@@ -1,17 +1,16 @@
-use std::string;
+use std::{io::Stdout, string};
 
 fn main() {
-    println!("insert your Name: ");
-    let mut name: String = String::new();
-    std::io::stdin().read_line(&mut name).unwrap();
-    name = name.trim().to_string();
-
     println!("insert your Age: ");
     let mut age: String = String::new();
     std::io::stdin().read_line(&mut age).unwrap();
-    let age_int: u8 = age.trim().parse().unwrap();
 
-    // You can use the `std::io::Write` trait to write to a file.
-    // get the name and age
-    println!("Wellcome: {name} of {age_int} years old");
+    // parse the age into a integer
+    let age_int : u8 = age.trim().parse().unwrap();
+
+    if age_int >= 18 {
+        println!("your age is {}, enjoi your membership", age_int);
+    }else {
+        println!("your age is {}, you cant pass", age_int);
+    }
 }
