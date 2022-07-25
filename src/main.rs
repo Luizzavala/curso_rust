@@ -1,9 +1,17 @@
+use std::string;
+
 fn main() {
-    // i8 is for numbers positive and negative, but u8 is for only numbers positive.
-    let mut edad : i8 = 36;
-    let name : &str = "Luis";
+    println!("insert your Name: ");
+    let mut name: String = String::new();
+    std::io::stdin().read_line(&mut name).unwrap();
+    name = name.trim().to_string();
 
-    edad  = edad + 1;
+    println!("insert your Age: ");
+    let mut age: String = String::new();
+    std::io::stdin().read_line(&mut age).unwrap();
+    let age_int: u8 = age.trim().parse().unwrap();
 
-    println!("Hi, my name is {name} and have {edad} years old.");
+    // You can use the `std::io::Write` trait to write to a file.
+    // get the name and age
+    println!("Wellcome: {name} of {age_int} years old");
 }
